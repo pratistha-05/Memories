@@ -5,7 +5,7 @@ import FileBase from 'react-file-base64';
 import Typography from '@mui/material/Typography';
 import { TextField } from '@mui/material';
 import {useDispatch} from 'react-redux';
-import { createPosts } from '../../actions/PostsActions';
+import { createPost } from '../../actions/PostsActions';
 
 
 const Form=()=>{
@@ -15,9 +15,8 @@ const Form=()=>{
     const dispatch=useDispatch();
     
     const handleSubmit=(e)=>{
-        console.log(1);
-        e.preventDefault.value();//to avoid refresh
-        dispatch(createPosts(data));//first the form sends all data to action of the reducer by creating a dispatch 
+        e.preventDefault();//to avoid refresh
+        dispatch(createPost(data));//first the form sends all data to action of the reducer by creating a dispatch 
     }
     //data contains entire post
     const clear=()=>{
