@@ -48,12 +48,7 @@ const App=()=>{
              <Grid xs={12} sm={6}>
                <Form/>
              </Grid>
-             <Grid item xs={12} sm={6}>
-              <Posts/>
-             </Grid>
-             <Grid item xs={12} sm={6}>
-              <Posts/>
-             </Grid>
+            
            </Grid>
          </Container>
         </Grow>

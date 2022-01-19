@@ -1,7 +1,6 @@
 import PostMessage from "../models/postSchema.js";
 const router = express.Router();
 import express from 'express';
-import mongoose from 'mongoose';
 
 export const getPosts=async(req,res)=>{
 try{
@@ -14,8 +13,8 @@ catch(error){
 
 }
 export const createPost=async(req,res)=>{
-    const { title, creator,message, tags} = req.body;
-    const newPostMessage = new PostMessage({ title, creator,message, tags})
+    const { title, creator,message, tags,selectedFile} = req.body;
+    const newPostMessage = new PostMessage({ title, creator,message, tags,selectedFile})
 
     //passing entered values from frontend to model
     try {

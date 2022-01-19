@@ -55,7 +55,10 @@ const Form=()=>{
             value={data.tags} 
             onChange={(e) => setData({ ...data, tags: e.target.value })}/>
                 
-           
+            <div >
+                <FileBase type="file" multiple={false} onDone={({ base64 }) => setData({ ...data, selectedFile: base64 })} />
+            </div>
+
             <Button  variant='contained' color="primary" size="large" type="submit"  fullWidth gutter>Submit</Button> 
             <Button onClick={clear} variant='contained' color="secondary" size="small" fullWidth>clear</Button>   
   

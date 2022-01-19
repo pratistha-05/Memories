@@ -5,16 +5,15 @@ const postSchema=mongoose.Schema({
     creator:String,
     message:String,
     tags:[String],
-    //file:String,
-    /*likes:{
-        type:Number,
-        default:0,
+    selectedFile: String,
+    likeCount: {
+        type: Number,
+        default: 0,
     },
-    date:{
-        type:Date,
-        default:new Date()
-    }
-    */
+    createdAt: {
+        type: Date,
+        default: new Date(),
+    },
 })
 
 const postMessage=mongoose.model('postMessage',postSchema);
