@@ -19,6 +19,7 @@ const App=()=>{
     dispatch(getPosts());//dispatch(action method)
   },[]);
     return(
+      <div >
 <Container >
 <AppBar position="static">
         <Toolbar>
@@ -41,21 +42,19 @@ const App=()=>{
       <Grow in>
          <Container>
            
-           <Grid container alignItems="stretch" justify="space-between">
-             <Grid item xs={12} sm={6}>
+          
               <Posts/>
-             </Grid>
-             <Grid xs={12} sm={6}>
-               <Form/>
-             </Grid>
             
-           </Grid>
+            
+               <Form/>
+        
+            
+          
          </Container>
         </Grow>
-          
-        
      
 </Container>
+</div>
     )
 }
 export default App;

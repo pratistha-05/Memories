@@ -1,5 +1,6 @@
-export default (posts = [],action) => {
-    console.log(action.type);
+export default (posts = [],action) => 
+{
+   // console.log(action.type);
 switch(action.type)
 {
     case 'FETCH_ALL':

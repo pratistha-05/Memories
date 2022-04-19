@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';//stores the global state
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { reducers } from './reducers';
+import './index.css';
 
 //import reportWebVitals from './reportWebVitals';
 

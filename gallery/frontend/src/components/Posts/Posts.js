@@ -10,29 +10,30 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import moment from 'moment';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-
+import useStyles from './styles';
 
 const Posts=()=>{
     const posts=useSelector((state)=>state.posts);//posts from combinedreducer posts variable
+    const classes = useStyles();
     console.log(posts);
     return (
         
-        <Grid container alignItems="stretch" spacing={3}>
+        <Grid container classname={classes.container} spacing={3} style={{marginTop:'30px'}}>
             {posts.map((post)=>(
                 
-                <Grid item xs={12} sm={6} key={post._id}>
-                    <Card>
-                        <CardMedia image={post.selectedFile} title={post.title}/>
+                <Grid item xs={12} sm={4} key={post._id}>
+                    <Card className={classes.card}>
+                        <CardMedia image={post.selectedFile} title={post.title} className={classes.media}/>
                         <div>
-                            <Typography variant="h6">{post.creator}</Typography>
-                            <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
+                            <Typography variant="h6" className={classes.creator}>{post.creator}</Typography>
+                            <Typography variant="body2" className={classes.time}>{moment(post.createdAt).fromNow()}</Typography>
                         </div>
-                        <div>
-                              <Typography variant="body2" color="textSecondary" component="h2">{post.tags.map((tag) => `#${tag} `)}</Typography>
+                        <div >
+                              <Typography variant="body2" color="textSecondary" component="h2"  className={classes.tag}>{post.tags.map((tag) => `#${tag} `)}</Typography>
                         </div>
-                        <Typography  gutterBottom variant="h5" component="h2">{post.title}</Typography>
+                        <Typography  gutterBottom variant="h5" component="h2"  className={classes.title}>{post.title}</Typography>
                         <CardContent>
-                            <Typography variant="body2" color="textSecondary" component="p">{post.message}</Typography>
+                            <Typography variant="body2" color="textSecondary" component="p"  className={classes.msg}>{post.message}</Typography>
                         </CardContent>
                         <CardActions>
                             <Button size="small" color="primary" ><ThumbUpAltIcon fontSize="small" /> Like {post.likeCount} </Button>
@@ -49,3 +50,4 @@ const Posts=()=>{
 }
 
 export default Posts;
+

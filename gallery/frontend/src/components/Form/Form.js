@@ -6,9 +6,12 @@ import Typography from '@mui/material/Typography';
 import { TextField } from '@mui/material';
 import {useDispatch} from 'react-redux';
 import { createPost } from '../../actions/PostsActions';
+import useStyles from './styles';
 
 
 const Form=()=>{
+    const classes = useStyles();
+
     const [data,setData]=useState({
         title:'',creator:'',message:'',tags:'',selectedFile:''
     })
@@ -23,9 +26,9 @@ const Form=()=>{
 
     }
     return (
-        <Paper elevation={0}>
+        <Paper elevation={0} style={{margin:'30px',width:'70%',display:'block',marginLeft:'auto',marginRight:'auto'}}>
         <form autoComplete='off' noValidate onSubmit={handleSubmit}>
-            <Typography variant='h6' align='center'>Creating a memory</Typography>
+            <Typography className={classes.heading} variant='h6' align='center'>Creating a memory</Typography>
 
             <TextField name="title" 
             variant="outlined" 
